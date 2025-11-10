@@ -9,7 +9,9 @@ export default function MainLayout() {
     <>
     <div className={darkMode?"dark":""}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <div className='min-h-screen bg-gray-200 pt-4'>
       <Outlet darkMode={darkMode} setDarkMode={setDarkMode}/>
+      </div>
       <Footer darkMode={darkMode} setDarkMode={setDarkMode}/>
       </div>
     </>

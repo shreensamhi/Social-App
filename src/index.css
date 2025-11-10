@@ -2,3 +2,26 @@
 @plugin './hero.js';
 @source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
+
+@theme{
+  --breakpoint-2xl :1400px;
+}
+.container{
+  @apply mx-auto
+}
+
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  box-shadow: inset 0 0 5px #f3f4f6; 
+  border-radius: 9999px;
+}
+::-webkit-scrollbar {
+  width: 6px; 
+
+}
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 9999px;
+}
+
