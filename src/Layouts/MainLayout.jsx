@@ -9,7 +9,7 @@ export default function MainLayout() {
     <>
     <div className={darkMode?"dark":""}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode}/>
-      <div className='min-h-screen bg-gray-200 pt-4'>
+      <div className='min-h-screen py-4 bg-gray-100 dark:bg-gray-900'>
       <Outlet darkMode={darkMode} setDarkMode={setDarkMode}/>
       </div>
       <Footer darkMode={darkMode} setDarkMode={setDarkMode}/>

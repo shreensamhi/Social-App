@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import signUp from '../Services/AuthServices';
 import { useNavigate ,Link} from 'react-router-dom';
 import { schema } from '../Schema/SchemaRegister';
+import { Helmet } from 'react-helmet';
 
 
 export default function Register() {
@@ -38,6 +39,7 @@ let{handleSubmit,register ,control ,formState:{errors ,touchedFields}} =  useFor
   }
 return (
   <>
+  <Helmet><title>Register</title></Helmet>
     <div className="relative w-full h-screen flex justify-center items-center bg-linear-to-br from-cyan-400 to-blue-600 dark:from-gray-400 dark:to-black overflow-hidden">
       <svg
         className="absolute bottom-0 left-0 w-full z-0"

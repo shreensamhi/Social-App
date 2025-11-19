@@ -42,3 +42,29 @@ export async function CreatePostApi(formData){
       return err.response.data
   }
 }
+
+export async function DeletePostApi(postId){
+  try{
+    const {data} = await axios.delete('https://linked-posts.routemisr.com/posts/'+postId,{
+      headers:{
+        token:localStorage.getItem('token')
+      }
+    })
+    return data
+  }catch(err){
+      return err.response.data
+  }
+}
+
+export async function EditPostApi(postId ,formData){
+  try{
+    const {data} = await axios.put('https://linked-posts.routemisr.com/posts/'+postId,formData,{
+      headers:{
+        token:localStorage.getItem('token')
+      }
+    })
+    return data
+  }catch(err){
+      return err.response.data
+  }
+}

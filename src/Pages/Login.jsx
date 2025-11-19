@@ -1,11 +1,12 @@
 import React ,{useContext, useState} from 'react'
 import {useNavigate , Link} from 'react-router-dom';
-import { useForm ,Controller} from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button ,Input} from '@heroui/react'
 import {signIn} from '../Services/AuthServices'
-import {schema} from '../Schema/SchemaLogin.js'
+import {schemaLogin} from '../Schema/SchemaLogin.js'
 import { AuthContext } from '../Context/AuthContext.jsx';
+import { Helmet } from 'react-helmet';
 
 
 export default function Login() {
@@ -18,7 +19,7 @@ let {handleSubmit,register,formState:{errors,touchedFields}}  = useForm({
       email:'',
       password:''
     },
-    resolver:zodResolver(schema),
+    resolver:zodResolver(schemaLogin),
     mode:'onBlur',
     reValidateMode:'onBlur'
   })
@@ -37,6 +38,7 @@ const res =  await signIn(userData)
 }
   return (
     <>
+    <Helmet><title>Register</title></Helmet>
     <div className="relative w-full h-screen flex justify-center items-center bg-linear-to-br from-cyan-400 to-blue-600 dark:from-gray-400 dark:to-black overflow-hidden">
       <svg
         className="absolute bottom-0 left-0 w-full z-0"

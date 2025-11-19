@@ -18,3 +18,18 @@ export  async function signIn(userData) {
       return err.response.data
   }
 }
+
+
+export  async function getUserDataApi() {
+  try{
+    let {data} = await axios.get('https://linked-posts.routemisr.com/users/profile-data',{
+      headers:{
+        token:localStorage.getItem('token')
+      }
+    });
+    return data
+  }
+  catch(err){
+      return err.response.data
+  }
+}

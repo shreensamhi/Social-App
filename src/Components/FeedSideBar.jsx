@@ -3,7 +3,7 @@ import React from 'react'
 export default function FeedSideBar() {
   return (
     <>
-    <div className="w-1/3 space-y-3">
+    <div className="lg:w-1/3 hidden lg:flex flex-col space-y-3">
   <div className="bg-white dark:bg-gray-900 mr-4 p-4 shadow rounded-md">
     <div className='text-gray-800 dark:text-gray-200'>
       Intro

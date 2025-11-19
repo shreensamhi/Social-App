@@ -4,12 +4,14 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Context/AuthContext';
 
 export default function Navbar({setDarkMode ,darkMode}) {
-const {isLoggedIn,setIsLoggedIn}  = useContext(AuthContext)
+const {isLoggedIn,setIsLoggedIn ,setUserData}  = useContext(AuthContext)
   const navigate = useNavigate();
+  
   function logOut(){
     localStorage.removeItem('token');
     setIsLoggedIn(null)
     navigate('/login');
+    setUserData(null)
   }
   return (
     <>
@@ -29,14 +31,14 @@ const {isLoggedIn,setIsLoggedIn}  = useContext(AuthContext)
         {isLoggedIn ? (
           <NavLink
             onClick={logOut}
-            className="hover:underline font-medium "
+            className="font-medium "
           >
             Logout
           </NavLink>
         ) : (
           <>
-            <NavLink to="/login" className="hover:underline">Sign in</NavLink>
-            <NavLink to="/register" className="hover:underline">Sign up</NavLink>
+            <NavLink to="/login" >Sign in</NavLink>
+            <NavLink to="/register">Sign up</NavLink>
           </>
         )}
 
